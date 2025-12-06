@@ -1,0 +1,235 @@
+/* Updated Minimalist & Premium Cart Style */
+
+/* Base Container */
+.cartContainer {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 30px;
+    font-family: 'Poppins', sans-serif; /* A more modern, premium font */
+    color: #1a1a1a;
+    background-color: #f7f7f9; /* Soft light background */
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* Heading */
+.heading {
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    letter-spacing: -0.5px;
+    color: #1a1a1a;
+    border-bottom: 3px solid #e0e0e5;
+    padding-bottom: 15px;
+}
+
+/* Items wrapper - Clean, white background */
+.itemList {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #eeeeee;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    margin-bottom: 30px;
+}
+
+/* Each cart item card - Focus on clean lines */
+.cartItem {
+    display: grid;
+    grid-template-columns: 100px 1fr 200px 120px;
+    gap: 30px;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f0f0; /* Soft separator */
+    transition: background-color .2s ease;
+}
+
+.cartItem:hover {
+    background-color: #fafafa;
+}
+
+/* Remove border on last item */
+.cartItem:last-child {
+    border-bottom: none;
+}
+
+/* image */
+.cartItem img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 8px;
+    border: 1px solid #e8e8e8;
+    background: #ffffff;
+    padding: 5px;
+}
+
+/* title & meta */
+.itemTitle {
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333333;
+}
+
+.itemMeta {
+    font-size: 14px;
+    color: #888888;
+}
+
+/* price info */
+.priceInfo {
+    text-align: right;
+    font-size: 16px;
+    color: #555555;
+}
+
+.priceInfo .price {
+    display: block;
+    font-weight: 700;
+    font-size: 18px;
+    color: #4a90e2; /* Accent color */
+}
+
+/* quantity controls */
+.quantityControl {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    padding: 4px;
+    width: fit-content;
+    margin-left: auto; /* Align control group to the right */
+}
+
+.quantityButton {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    border: none;
+    background: #ffffff;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 18px;
+    color: #4a90e2;
+    transition: background .1s;
+}
+
+.quantityButton:hover {
+    background: #e9f3ff;
+}
+
+.quantityDisplay {
+    min-width: 25px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+    color: #333;
+}
+
+/* remove button */
+.removeBtn {
+    margin-top: 8px;
+    margin-left: 0;
+    border: none;
+    background: transparent;
+    color: #cc3333;
+    padding: 4px 0;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 13px;
+    text-decoration: underline;
+    transition: color .15s ease;
+}
+
+.removeBtn:hover {
+    color: #ff5555;
+    text-decoration: none;
+}
+
+/* summary area (left content + summary box) */
+.summaryArea {
+    display: flex;
+    justify-content: flex-end; /* Align summary to the right */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* summary box */
+.summary {
+    border-radius: 12px;
+    padding: 25px;
+    width: 300px;
+    background: #ffffff;
+    border: 1px solid #e0e0e5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    position: sticky;
+    top: 20px;
+}
+
+.summary small { 
+    color: #666666; 
+    display: block; 
+    margin-bottom: 8px; 
+    font-size: 15px;
+}
+
+.totalAmount {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+.checkoutButton {
+    display: block;
+    width: 100%;
+    padding: 14px 16px;
+    background: #4a90e2; /* Primary blue button */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background .15s ease, transform .1s ease;
+}
+
+.checkoutButton:hover {
+    background: #3c7ccf;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+}
+
+
+/* Responsiveness (Kept simple) */
+@media (max-width: 980px) {
+    .cartItem {
+        grid-template-columns: 80px 1fr;
+        grid-template-rows: auto auto;
+        gap: 15px;
+    }
+
+    .priceInfo, .quantityControl {
+        grid-column: 2 / 3;
+        text-align: left;
+        justify-content: flex-start;
+        margin-left: 0; 
+    }
+    
+    .priceInfo { order: 3; }
+    .quantityControl { order: 4; }
+
+    .summaryArea {
+        justify-content: center;
+    }
+
+    .summary {
+        width: 100%;
+        position: relative;
+        top: 0;
+    }
+}
